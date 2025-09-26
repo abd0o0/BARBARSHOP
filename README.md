@@ -1,31 +1,31 @@
-
 # BARBARSHOP
 
 ## What It Does
-BARBARSHOP is a simple web app I built for booking barbershop appointments. Users can pick services, choose times, and manage bookings. It shows my skills in web development, databases, and user authentication—great for my portfolio!
+BARBARSHOP is a web app I built for booking barbershop appointments. Users can browse services, pick a time, and book easily. Admins manage bookings and services. It’s simple, mobile-friendly, and built with JavaScript, CSS, and HTML—perfect for showing my full-stack web development skills!
 
-**Note**: This is a demo project. Add payment systems (like Stripe) for real use.
+**Note**: This is a demo project. Add payment systems (like Stripe) for real-world use.
 
 ## Features
-- **Book Appointments**: Pick a date, time, and service (e.g., haircut).
-- **User Accounts**: Sign up, log in, and manage profiles.
-- **Service List**: Browse available services with prices.
-- **Admin Panel**: Admins can view bookings and manage services.
-- **Mobile-Friendly**: Works on phones and desktops.
-- **Notifications**: Get email confirmations for bookings.
+- **Book Appointments**: Choose a date, time, and service (like haircut or shave).
+- **User Accounts**: Sign up, log in, and save your info.
+- **Service List**: See all services with prices.
+- **Admin Dashboard**: View and manage all bookings.
+- **Mobile-Friendly**: Looks great on phones and computers.
+- **Alerts**: Get email confirmations for bookings.
 
 ## Tech Used
-- **Backend**: Python with Flask (simple web framework).
-- **Frontend**: HTML, CSS, JavaScript (basic and clean).
-- **Database**: SQLite (easy to set up; supports PostgreSQL too).
+- **Backend**: Node.js with Express (fast and simple server).
+- **Frontend**: HTML, CSS, JavaScript (clean and responsive).
+- **Database**: SQLite (easy setup; supports MongoDB).
 - **Tools**:
-  - Flask for web routes.
-  - SQLAlchemy for database.
+  - Express for APIs.
+  - bcrypt for secure passwords.
+  - EJS for templates (or swap with React).
   - Bootstrap for styling.
 
 ## How to Set Up
 ### What You Need
-- Python 3.10 or higher.
+- Node.js 18+.
 - Git to clone the repo.
 - A web browser.
 
@@ -35,32 +35,28 @@ BARBARSHOP is a simple web app I built for booking barbershop appointments. User
    git clone https://github.com/abd0o0/BARBARSHOP.git
    cd BARBARSHOP
    ```
-2. Set up a virtual environment:
+2. Install dependencies:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # Windows: venv\Scripts\activate
+   npm install
    ```
-3. Install packages:
-   ```bash
-   pip install -r requirements.txt
+3. Add settings (create `.env` file in the root):
    ```
-4. Add settings (create `.env` file in the root):
-   ```
+   PORT=3000
+   DATABASE_URL=sqlite://barbershop.db
    SECRET_KEY=your_secret_key
-   DATABASE_URL=sqlite:///barbershop.db
    ```
-5. Start the app:
+4. Start the app:
    ```bash
-   python app.py
+   node app.js
    ```
-   Open http://localhost:5000 in your browser.
+   Open http://localhost:3000 in your browser.
 
 ## How to Use
-- **Users**: Sign up at `/signup`, browse services at `/services`, book at `/book`.
-- **Admins**: Log in at `/admin` to manage bookings (default: admin@example.com, password: admin123).
-- **CLI Test** (optional):
+- **Users**: Sign up at `/signup`, check services at `/services`, book at `/book`.
+- **Admins**: Log in at `/admin` (default: admin@example.com, password: admin123).
+- **Test API** (optional):
    ```bash
-   python app.py test
+   curl http://localhost:3000/api/services
    ```
-   Checks if the app runs.
+   Lists all services as JSON.
 
